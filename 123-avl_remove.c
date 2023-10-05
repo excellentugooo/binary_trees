@@ -1,11 +1,11 @@
 #include "binary_trees.h"
 
 /**
- * bal - Measures balance factor of a AVL
+ * balf - Measures balance factor of a AVL
  * @tree: tree to go through
  * Return: balanced factor
  */
-void balance_factor(avl_t **tree)
+void balf(avl_t **tree)
 {
 	int bf;
 
@@ -13,8 +13,8 @@ void balance_factor(avl_t **tree)
 		return;
 	if ((*tree)->left == NULL && (*tree)->right == NULL)
 		return;
-	balance_factor(&(*tree)->left);
-	balance_factor(&(*tree)->right);
+	balf(&(*tree)->left);
+	balf(&(*tree)->right);
 	bf = binary_tree_balance((const binary_tree_t *)*tree);
 	if (bf > 1)
 		*tree = binary_tree_rotate_right((binary_tree_t *)*tree);
@@ -46,11 +46,11 @@ int successor(bst_t *node)
 
 }
 /**
- *remove - function that removes a node depending of its children
+ *remove_t - function that removes a node depending of its children
  *@root: node to remove
  *Return: 0 if it has no children or other value if it has
  */
-int remove(bst_t *root)
+int remove_t(bst_t *root)
 {
 	int new_value = 0;
 
@@ -109,7 +109,7 @@ bst_t *bst_remove(bst_t *root, int value)
 		bst_remove(root->right, value);
 	else if (value == root->n)
 	{
-		type = remove(root);
+		type = remove_t(root);
 		if (type != 0)
 			bst_remove(root->right, type);
 	}
@@ -130,6 +130,6 @@ avl_t *avl_remove(avl_t *root, int value)
 
 	if (root_a == NULL)
 		return (NULL);
-	balance_factor(&root_a);
+	balf(&root_a);
 	return (root_a);
 }

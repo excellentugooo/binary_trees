@@ -22,14 +22,14 @@ void creates_tree(avl_t **node, int *array, size_t size, int mode)
 	if (mode == 1)
 	{
 		(*node)->left = binary_tree_node(*node, array[mid]);
-		create_tree(&((*node)->left), array, mid, 1);
-		create_tree(&((*node)->left), array + mid + 1, (size - 1 - mid), 2);
+		creates_tree(&((*node)->left), array, mid, 1);
+		creates_tree(&((*node)->left), array + mid + 1, (size - 1 - mid), 2);
 	}
 	else
 	{
 		(*node)->right = binary_tree_node(*node, array[mid]);
-		create_tree(&((*node)->right), array, mid, 1);
-		create_tree(&((*node)->right), array + mid + 1, (size - 1 - mid), 2);
+		creates_tree(&((*node)->right), array, mid, 1);
+		creates_tree(&((*node)->right), array + mid + 1, (size - 1 - mid), 2);
 	}
 }
 

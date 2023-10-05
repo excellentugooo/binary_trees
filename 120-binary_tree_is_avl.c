@@ -32,7 +32,7 @@ size_t height(const binary_tree_t *tree)
  *
  * Return: If the tree is a valid AVL tree, 1, otherwise, 0.
  */
-int is_avl_helper(const binary_tree_t *tree, int low, int high)
+int helper(const binary_tree_t *tree, int low, int high)
 {
 	size_t lhgt, rhgt, diff;
 
