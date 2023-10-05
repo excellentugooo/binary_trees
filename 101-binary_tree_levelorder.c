@@ -38,7 +38,7 @@ void free_queue(levelorder_queue_t *heads)
 
 	while (heads != NULL)
 	{
-		tmp = heads->next;
+		temp = heads->next;
 		free(heads);
 		heads = temp;
 	}
@@ -116,7 +116,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 
 	while (heads != NULL)
 	{
-		pints_push(head->node, heads, &tails, func);
-		pops(&head);
+		pints_push(heads->node, heads, &tails, func);
+		pops(&heads);
 	}
 }

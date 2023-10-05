@@ -113,7 +113,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			push(heads->node->left, heads, &tails);
 		}
 		else
-			flag = 1;
+			flags = 1;
 		if (heads->node->right != NULL)
 		{
 			if (flags == 1)
@@ -121,7 +121,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 				free_queue(heads);
 				return (0);
 			}
-			push(head->node->right, heads, &tails);
+			push(heads->node->right, heads, &tails);
 		}
 		else
 			flags = 1;
