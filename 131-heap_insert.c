@@ -1,5 +1,7 @@
 #include "binary_trees.h"
 
+size_t binary_tree_nodes(const binary_tree_t *tree);
+
 /**
  * heap_insert - inserts a value in Max Binary Heap
  * @root: a double pointer to the root node of the Heap to insert the value

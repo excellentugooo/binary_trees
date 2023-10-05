@@ -125,7 +125,7 @@ int heap_extract(heap_t **root)
 		return (value);
 	}
 
-	bt_preorder(heap_r, &node, tree_height(heap_r));
+	bt_preorder(heap_r, &node, trees_height(heap_r));
 
 	heap_r->n = node->n;
 	if (node->parent->right)
